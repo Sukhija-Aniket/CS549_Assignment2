@@ -1,6 +1,7 @@
 from scipy.stats import f, f_oneway
 import numpy as np
 import pandas as pd
+import os
 
 # Define the data (replace with your actual data)
 data = []
@@ -15,10 +16,12 @@ def read_data(output_file):
         day_time = output_file.split('_')[1].split('.')[0]
         data.append([int(values[0]), int(values[1]), int(values[2]), day_time, float(values[3]), float(values[4])])
 
+script_dir = os.path.dirname(__file__)
+outputs_dir = os.path.join(script_dir, "outputs")
 
-read_data('output_morning.txt')
-read_data('output_evening.txt')
-read_data('output_night.txt')
+read_data(os.path.join(outputs_dir,'output_morning.txt'))
+read_data(os.path.join(outputs_dir,'output_evening.txt'))
+read_data(os.path.join(outputs_dir,'output_night.txt'))
 
 columns = ['File_Size', 'Speed_Limit', 'Concurrent_Downloads', 'Time_of_Day', 'Total_Time', 'Throughput']
 

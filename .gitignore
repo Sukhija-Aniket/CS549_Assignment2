@@ -1,4 +1,4 @@
 *.txt
 /downloads
-/trash
+/outputs
 wget*

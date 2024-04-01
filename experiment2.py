@@ -12,6 +12,7 @@ output_time = sys.argv[1]
 # Directory to save downloaded files
 script_dir = os.path.dirname(__file__)
 download_dir = os.path.join(script_dir, "downloads")
+outputs_dir = os.path.join(script_dir, "outputs")
 
 # Create download directory if it doesn't exist
 if not os.path.exists(download_dir):

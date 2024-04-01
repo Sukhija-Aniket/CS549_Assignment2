@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 data = []
 def read_data(output_file):
@@ -10,8 +11,10 @@ def read_data(output_file):
         data.append([int(values[0]), int(values[1]), int(values[2]), values[3], float(values[4]), float(values[5])])
 
 
-read_data('results_simple_morning.txt')
-read_data('results_simple_night.txt')
+script_dir = os.path.dirname(__file__)
+outputs_dir = os.path.join(script_dir, "outputs")
+read_data(os.path.join(outputs_dir,'results_simple_morning.txt'))
+read_data(os.path.join(outputs_dir,'results_simple_night.txt'))
 
 columns = ['File_Size', 'Speed_Limit', 'Concurrent_Downloads', 'Time_of_Day', 'Total_Time', 'Throughput']
 
