@@ -1,0 +1,4 @@
+*.txt
+/downloads
+/trash
+wget*
